@@ -1,4 +1,4 @@
-package com.rockmobile.bottommenudemo;
+package com.rockmobile.bottommenudemo.fragment;
 
 import android.content.Context;
 import android.net.Uri;
@@ -8,16 +8,18 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.rockmobile.bottommenudemo.R;
+
 
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link Fragment_Dicover.OnFragmentInteractionListener} interface
+ * {@link Fragment_Profile.OnFragmentInteractionListener} interface
  * to handle interaction events.
- * Use the {@link Fragment_Dicover#newInstance} factory method to
+ * Use the {@link Fragment_Profile#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class Fragment_Dicover extends Fragment {
+public class Fragment_Profile extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -29,7 +31,7 @@ public class Fragment_Dicover extends Fragment {
 
     private OnFragmentInteractionListener mListener;
 
-    public Fragment_Dicover() {
+    public Fragment_Profile() {
         // Required empty public constructor
     }
 
@@ -39,11 +41,11 @@ public class Fragment_Dicover extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment Fragment_Dicover.
+     * @return A new instance of fragment Fragment_Profile.
      */
     // TODO: Rename and change types and number of parameters
-    public static Fragment_Dicover newInstance(String param1, String param2) {
-        Fragment_Dicover fragment = new Fragment_Dicover();
+    public static Fragment_Profile newInstance(String param1, String param2) {
+        Fragment_Profile fragment = new Fragment_Profile();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -64,7 +66,7 @@ public class Fragment_Dicover extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment__dicover, container, false);
+        return inflater.inflate(R.layout.fragment__profile, container, false);
     }
 
     // TODO: Rename method, update argument and hook method into UI event

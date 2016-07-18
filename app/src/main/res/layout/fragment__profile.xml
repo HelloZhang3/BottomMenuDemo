@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/common_white"
-    tools:context="com.rockmobile.bottommenudemo.Fragment_Profile">
+    tools:context=".fragment.Fragment_Profile">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView

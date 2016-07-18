@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/common_white"
-    tools:context="com.rockmobile.bottommenudemo.Fragment_Friends">
+    tools:context=".fragment.Fragment_Friends">
 
     <TextView
         android:layout_width="wrap_content"

@@ -10,6 +10,11 @@ import android.view.Window;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.rockmobile.bottommenudemo.fragment.Fragment_Dicover;
+import com.rockmobile.bottommenudemo.fragment.Fragment_Friends;
+import com.rockmobile.bottommenudemo.fragment.Fragment_Msg;
+import com.rockmobile.bottommenudemo.fragment.Fragment_Profile;
+
 /**
  * 主Activity
  * @author zhangyadong
