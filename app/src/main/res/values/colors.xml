@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    
+    <!--常用-->
+    <color name="common_black">#000000</color>
+    <color name="common_white">#ffffff</color>
+    <color name="common_red">#ff0000</color>
+
+
+    <color name="color_layout_title">#232325</color>
+    <color name="color_bottom_menu_line">#ffeeeeee</color>
+
+</resources>
