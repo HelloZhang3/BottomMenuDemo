@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.Window;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.rockmobile.bottommenudemo.fragment.Fragment_Dicover;
 import com.rockmobile.bottommenudemo.fragment.Fragment_Friends;
@@ -17,8 +18,9 @@ import com.rockmobile.bottommenudemo.fragment.Fragment_Profile;
 
 /**
  * 主Activity
+ *
  * @author zhangyadong
- * @time   2016/7/18  14:06
+ * @time 2016/7/18  14:06
  * email:  zhangyadong@rockmobile.com.cn
  */
 public class MainActivity extends AppCompatActivity implements
@@ -87,6 +89,7 @@ public class MainActivity extends AppCompatActivity implements
             case R.id.re_weixin:
                 index = 0;
                 txt_title.setText("微信");
+                homefragment.showCheckToast("你选择了消息");
                 break;
             case R.id.re_contact_list:
                 index = 1;
@@ -101,6 +104,51 @@ public class MainActivity extends AppCompatActivity implements
                 txt_title.setText("我");
                 break;
         }
+        changeFragment(index);
+    }
+
+    @Override
+    public void onFragmentInteraction(Uri uri) {
+        Toast.makeText(this, uri.toString(), Toast.LENGTH_SHORT).show();
+        if (uri.toString().equals("hello world!")) {
+            switchTab(3);
+        }
+    }
+
+    /**
+     * 控制显示Tab
+     *
+     * @param index
+     */
+    void switchTab(int index) {
+        switch (index) {
+            case 0:
+                index = 0;
+                txt_title.setText("微信");
+                homefragment.showCheckToast("你选择了消息");
+                break;
+            case 1:
+                index = 1;
+                txt_title.setText("通讯录");
+                break;
+            case 2:
+                index = 2;
+                txt_title.setText("发现");
+                break;
+            case 3:
+                index = 3;
+                txt_title.setText("我");
+                break;
+        }
+        changeFragment(index);
+    }
+
+    /**
+     * 根据index切换Fragment
+     *
+     * @param index
+     */
+    private void changeFragment(int index) {
         if (currentTabIndex != index) {
             FragmentTransaction trx = getSupportFragmentManager().beginTransaction();
             trx.hide(fragments[currentTabIndex]);
@@ -115,10 +163,5 @@ public class MainActivity extends AppCompatActivity implements
         textviews[currentTabIndex].setTextColor(0xFF999999);
         textviews[index].setTextColor(0xFF45C01A);
         currentTabIndex = index;
-    }
-
-    @Override
-    public void onFragmentInteraction(Uri uri) {
-
     }
 }
