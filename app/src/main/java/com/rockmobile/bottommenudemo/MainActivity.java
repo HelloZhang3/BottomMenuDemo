@@ -151,10 +151,12 @@ public class MainActivity extends AppCompatActivity implements
     protected void onNewIntent(Intent intent) {
         super.onNewIntent(intent);
         setIntent(intent);
-        String tab_code = intent.getStringExtra(TAB_CODE);
-        if (Integer.valueOf(tab_code) == 2) {
-            changeFragment(2);
-            txt_title.setText("发现");
+        if (intent != null) {
+            String tab_code = intent.getStringExtra(TAB_CODE);
+            if (tab_code != null && Integer.valueOf(tab_code) == 2) {
+                changeFragment(2);
+                txt_title.setText("发现");
+            }
         }
     }
 

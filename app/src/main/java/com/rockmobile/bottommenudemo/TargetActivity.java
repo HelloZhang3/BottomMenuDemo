@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
 public class TargetActivity extends AppCompatActivity {
@@ -21,10 +22,15 @@ public class TargetActivity extends AppCompatActivity {
                 Intent intent = new Intent(context, MainActivity.class);
                 intent.putExtra(MainActivity.TAB_CODE, "2");
                 context.startActivity(intent);
-//                finish();
+                finish();
             }
         });
 
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.i("sss","onDestroy");
+    }
 }
