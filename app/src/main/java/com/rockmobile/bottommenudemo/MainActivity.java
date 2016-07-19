@@ -1,5 +1,6 @@
 package com.rockmobile.bottommenudemo;
 
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -28,6 +29,9 @@ public class MainActivity extends AppCompatActivity implements
         Fragment_Profile.OnFragmentInteractionListener,
         Fragment_Dicover.OnFragmentInteractionListener,
         Fragment_Friends.OnFragmentInteractionListener {
+
+    //控制显示哪个选项卡
+    public static final String TAB_CODE = "tab_code";
 
     private TextView txt_title;
     private Fragment[] fragments;
@@ -141,6 +145,17 @@ public class MainActivity extends AppCompatActivity implements
                 break;
         }
         changeFragment(index);
+    }
+
+    @Override
+    protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
+        setIntent(intent);
+        String tab_code = intent.getStringExtra(TAB_CODE);
+        if (Integer.valueOf(tab_code) == 2) {
+            changeFragment(2);
+            txt_title.setText("发现");
+        }
     }
 
     /**

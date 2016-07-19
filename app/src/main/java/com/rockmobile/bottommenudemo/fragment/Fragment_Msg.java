@@ -1,16 +1,17 @@
 package com.rockmobile.bottommenudemo.fragment;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.rockmobile.bottommenudemo.R;
+import com.rockmobile.bottommenudemo.TargetActivity;
 
 
 /**
@@ -68,14 +69,23 @@ public class Fragment_Msg extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment__msg, container, false);
-        TextView textView = (TextView) view.findViewById(R.id.tv);
-        textView.setOnClickListener(new View.OnClickListener() {
+
+        //跳转至个人中心
+        view.findViewById(R.id.btn_go_center).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 onButtonPressed(Uri.parse("hello world!"));
             }
         });
 
+        //跳转至朋友圈
+        view.findViewById(R.id.btn).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), TargetActivity.class);
+                getActivity().startActivity(intent);
+            }
+        });
 
         return view;
     }
