@@ -7,6 +7,9 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 import com.rockmobile.bottommenudemo.R;
 
@@ -65,8 +68,17 @@ public class Fragment_Dicover extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment__dicover, container, false);
+        View view = inflater.inflate(R.layout.fragment__dicover, container, false);
+        ImageView picTwoPointFive = (ImageView) view.findViewById(R.id.iv_two_point_five);
+        ImageView picThree = (ImageView) view.findViewById(R.id.iv_three);
+
+        WindowManager wm = getActivity().getWindowManager();
+        int width = wm.getDefaultDisplay().getWidth();
+
+        picTwoPointFive.setLayoutParams(new LinearLayout.LayoutParams(width, (int)(width * 0.83)));
+        picThree.setLayoutParams(new LinearLayout.LayoutParams(width, (int)(width * 0.67)));
+
+        return view;
     }
 
     // TODO: Rename method, update argument and hook method into UI event
