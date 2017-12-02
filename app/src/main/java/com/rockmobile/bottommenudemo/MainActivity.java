@@ -12,7 +12,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.rockmobile.bottommenudemo.fragment.Fragment_Dicover;
+import com.rockmobile.bottommenudemo.fragment.Fragment_Discover;
 import com.rockmobile.bottommenudemo.fragment.Fragment_Friends;
 import com.rockmobile.bottommenudemo.fragment.Fragment_Msg;
 import com.rockmobile.bottommenudemo.fragment.Fragment_Profile;
@@ -24,11 +24,7 @@ import com.rockmobile.bottommenudemo.fragment.Fragment_Profile;
  * @time 2016/7/18  14:06
  * email:  zhangyadong@rockmobile.com.cn
  */
-public class MainActivity extends AppCompatActivity implements
-        Fragment_Msg.OnFragmentInteractionListener,
-        Fragment_Profile.OnFragmentInteractionListener,
-        Fragment_Dicover.OnFragmentInteractionListener,
-        Fragment_Friends.OnFragmentInteractionListener {
+public class MainActivity extends AppCompatActivity implements OnFragmentInteractionListener {
 
     //控制显示哪个选项卡
     public static final String TAB_CODE = "tab_code";
@@ -37,7 +33,7 @@ public class MainActivity extends AppCompatActivity implements
     private Fragment[] fragments;
     public Fragment_Msg homefragment;
     private Fragment_Friends contactlistfragment;
-    private Fragment_Dicover findfragment;
+    private Fragment_Discover findfragment;
     private Fragment_Profile profilefragment;
     private ImageView[] imagebuttons;
     private TextView[] textviews;
@@ -62,7 +58,7 @@ public class MainActivity extends AppCompatActivity implements
         txt_title = (TextView) findViewById(R.id.txt_tiele);
         homefragment = new Fragment_Msg();
         contactlistfragment = new Fragment_Friends();
-        findfragment = new Fragment_Dicover();
+        findfragment = new Fragment_Discover();
         profilefragment = new Fragment_Profile();
         fragments = new Fragment[]{homefragment, contactlistfragment, findfragment, profilefragment};
         imagebuttons = new ImageView[4];
